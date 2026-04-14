@@ -3,7 +3,6 @@
         "desc": "购买物资入口",
         "pre_delay": 0,
         "action": {
-            //初始化稳定需求物资白名单
             "type": "Custom",
             "param": {
                 "custom_action": "AttachToExpectedRegexAction",
@@ -27,28 +26,18 @@
         "enabled": false,
         "max_hit": 1,
         "pre_delay": 0,
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "SubTask",
-                "custom_action_param": {
-                    "sub": [
-                        "SceneEnterMenuRegionalDevelopmentValleyIVStockRedistribution"
-                    ]
-                }
-            }
-        },
         "anchor": {
             "BuyGoodsElasticDecision": "BuyGoodsElasticDecisionValleyIV"
         },
         "post_delay": 0,
         "rate_limit": 0,
-        "next": [
-            "BuyGoodsElasticTask"
-        ],
         "focus": {
             "Node.Recognition.Starting": "正在前往: 四号谷地"
-        }
+        },
+        "next": [
+            "BuyGoodsElasticTask",
+            "[JumpBack]SceneEnterMenuRegionalDevelopmentValleyIVStockRedistribution"
+        ]
     },
     "BuyGoodsStapleValleyIV": {
         "desc": "购买稳定需求物资四号谷地节点",
@@ -65,28 +54,18 @@
         "enabled": false,
         "max_hit": 1,
         "pre_delay": 0,
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "SubTask",
-                "custom_action_param": {
-                    "sub": [
-                        "SceneEnterMenuRegionalDevelopmentWulingStockRedistribution"
-                    ]
-                }
-            }
-        },
         "anchor": {
             "BuyGoodsElasticDecision": "BuyGoodsElasticDecisionWuling"
         },
         "post_delay": 0,
         "rate_limit": 0,
-        "next": [
-            "BuyGoodsElasticTask"
-        ],
         "focus": {
             "Node.Recognition.Starting": "正在前往: 武陵"
-        }
+        },
+        "next": [
+            "BuyGoodsElasticTask",
+            "[JumpBack]SceneEnterMenuRegionalDevelopmentWulingStockRedistribution"
+        ]
     },
     "BuyGoodsStapleWuling": {
         "desc": "购买稳定需求物资武陵节点",

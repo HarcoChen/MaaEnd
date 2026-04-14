@@ -42,16 +42,6 @@
         ]
     },
     "BuyGoodsElasticTask": {
-        "desc": "开始购买物资任务",
-        "pre_delay": 0,
-        "post_delay": 0,
-        "rate_limit": 0,
-        "next": [
-            "BuyGoodsElasticGotoGoods",
-            "BuyGoodsElasticCheckInStore"
-        ]
-    },
-    "BuyGoodsElasticCheckInStore": {
         "desc": "检查商店图标，确认是否位于物资调度",
         "recognition": {
             "type": "TemplateMatch",
@@ -70,9 +60,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "rate_limit": 0,
-        "focus": {
-            "Node.Recognition.Succeeded": "该地区未解锁弹性物资调度，跳过该地区"
-        }
+        "next": [
+            "BuyGoodsElasticGotoGoods",
+            "BuyGoodsElasticLocked"
+        ]
     },
     "BuyGoodsElasticGotoGoods": {
         "desc": "选择弹性物资调度",
@@ -180,5 +171,12 @@
         "next": [
             "[Anchor]BuyGoodsElasticDecision"
         ]
+    },
+    "BuyGoodsElasticLocked": {
+        "pre_delay": 0,
+        "post_delay": 0,
+        "focus": {
+            "Node.Recognition.Succeeded": "该地区未解锁弹性物资调度，跳过该地区"
+        }
     }
 }
