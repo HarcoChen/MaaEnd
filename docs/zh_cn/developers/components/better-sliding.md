@@ -15,7 +15,7 @@
 - go-service 总注册入口：`agent/go-service/register.go`
 - 公共 Pipeline：`assets/resource/pipeline/BetterSliding/Main.json` 与 `Helper.json`
 - 测试 Pipeline：`assets/resource/pipeline/BetterSliding/Test.json`
-- 现有接入示例：`assets/resource/pipeline/AutoStockpile/Purchase.json` 中的 `AutoStockpileSwipeSpecificQuantity`
+- 现有接入示例：`assets/resource/pipeline/BuyGoods/Elastic/Purchase.json` 中的 `BuyGoodsElasticSwipeSpecificQuantity`
 
 其中 `agent/go-service/bettersliding/` 已按职责拆分为多个文件：
 
@@ -116,8 +116,8 @@ clickY = startY + (endY - startY) * numerator / denominator
                     "OnlyRec": false
                 },
                 "Direction": "right",
-                "IncreaseButton": "AutoStockpile/IncreaseButton.png",
-                "DecreaseButton": "AutoStockpile/DecreaseButton.png",
+                "IncreaseButton": "BuyGoods/IncreaseButton.png",
+                "DecreaseButton": "BuyGoods/DecreaseButton.png",
                 "CenterPointOffset": [-10, 0]
             }
         }
@@ -199,7 +199,7 @@ clickY = startY + (endY - startY) * numerator / denominator
 #### 1. 传模板路径（推荐）
 
 ```json
-"IncreaseButton": "AutoStockpile/IncreaseButton.png"
+"IncreaseButton": "BuyGoods/IncreaseButton.png"
 ```
 
 此时 go-service 会动态把对应分支节点改成 `TemplateMatch + Click`：
@@ -326,8 +326,8 @@ clickY = startY + (endY - startY) * numerator / denominator
             "custom_action": "BetterSliding",
             "custom_action_param": {
                 "Direction": "right",
-                "IncreaseButton": "AutoStockpile/IncreaseButton.png",
-                "DecreaseButton": "AutoStockpile/DecreaseButton.png",
+                "IncreaseButton": "BuyGoods/IncreaseButton.png",
+                "DecreaseButton": "BuyGoods/DecreaseButton.png",
                 "Quantity": {
                     "Box": [340, 430, 200, 140],
                     "OnlyRec": true
@@ -360,8 +360,8 @@ clickY = startY + (endY - startY) * numerator / denominator
             "custom_action": "BetterSliding",
             "custom_action_param": {
                 "Direction": "right",
-                "IncreaseButton": "AutoStockpile/IncreaseButton.png",
-                "DecreaseButton": "AutoStockpile/DecreaseButton.png",
+                "IncreaseButton": "BuyGoods/IncreaseButton.png",
+                "DecreaseButton": "BuyGoods/DecreaseButton.png",
                 "Quantity": {
                     "Box": [340, 430, 200, 140],
                     "OnlyRec": true
@@ -409,7 +409,7 @@ clickY = startY + (endY - startY) * numerator / denominator
             "custom_action_param": {
                 "Direction": "right",
                 "ExceedingOverrideEnable": "SomeFallbackNode",
-                "IncreaseButton": "AutoStockpile/IncreaseButton.png",
+                "IncreaseButton": "BuyGoods/IncreaseButton.png",
                 "Target": 1,
                 "Quantity": {
                     "Box": [340, 430, 200, 140],
@@ -425,14 +425,14 @@ clickY = startY + (endY - startY) * numerator / denominator
     },
     "post_delay": 0,
     "rate_limit": 0,
-    "next": ["AutoStockpileRelayNodeSwipe"],
+    "next": ["BuyGoodsElasticRelayNodeSwipe"],
     "focus": {
         "Node.Action.Failed": "定量滑动失败，取消购买"
     }
 }
 ```
 
-文件位置：`assets/resource/pipeline/AutoStockpile/Purchase.json`（节点：`AutoStockpileSwipeSpecificQuantity`）
+文件位置：`assets/resource/pipeline/BuyGoods/Elastic/Purchase.json`（节点：`BuyGoodsElasticSwipeSpecificQuantity`）
 
 ## 成功与失败条件
 

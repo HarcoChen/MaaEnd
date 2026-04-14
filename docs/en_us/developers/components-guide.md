@@ -57,7 +57,7 @@ These tasks have dedicated maintenance guides—**read the matching doc before c
 
 | Task           | Doc                                                                      |
 | -------------- | ------------------------------------------------------------------------ |
-| AutoStockpile  | [tasks/auto-stockpile-maintain.md](./tasks/auto-stockpile-maintain.md)   |
+| BuyGoods  | [tasks/buy-goods-maintain.md](./tasks/buy-goods-maintain.md)   |
 | DijiangRewards | [tasks/dijiang-rewards-maintain.md](./tasks/dijiang-rewards-maintain.md) |
 | CreditShopping | [tasks/credit-shopping-maintain.md](./tasks/credit-shopping-maintain.md) |
 

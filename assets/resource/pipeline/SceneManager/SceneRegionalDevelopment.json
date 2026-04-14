@@ -240,7 +240,7 @@
                     100
                 ],
                 "template": [
-                    "AutoStockpile/StockRedistributionButton.png"
+                    "BuyGoods/StockRedistributionButton.png"
                 ],
                 "threshold": [
                     0.8
@@ -266,8 +266,8 @@
             70
         ],
         "template": [
-            "AutoStockpile/ElasticGoodsButton.png",
-            "AutoStockpile/ElasticGoodsButtonSelected.png"
+            "BuyGoods/ElasticGoodsButton.png",
+            "BuyGoods/ElasticGoodsButtonSelected.png"
         ],
         "threshold": [
             0.8
@@ -290,7 +290,7 @@
                     100
                 ],
                 "template": [
-                    "AutoStockpile/StockRedistributionButton.png"
+                    "BuyGoods/StockRedistributionButton.png"
                 ],
                 "threshold": [
                     0.8
@@ -316,8 +316,8 @@
             70
         ],
         "template": [
-            "AutoStockpile/ElasticGoodsButton.png",
-            "AutoStockpile/ElasticGoodsButtonSelected.png"
+            "BuyGoods/ElasticGoodsButton.png",
+            "BuyGoods/ElasticGoodsButtonSelected.png"
         ],
         "threshold": [
             0.8

@@ -1,0 +1,106 @@
+{
+    "BuyGoodsMain": {
+        "desc": "自动囤货入口",
+        "pre_delay": 0,
+        "action": {
+            //初始化稳定需求物资白名单
+            "type": "Custom",
+            "param": {
+                "custom_action": "AttachToExpectedRegexAction",
+                "custom_action_param": {
+                    "target": "BuyGoodsStapleInItemName"
+                }
+            }
+        },
+        "post_delay": 0,
+        "rate_limit": 0,
+        "next": [
+            "[JumpBack]BuyGoodsElasticValleyIV",
+            "[JumpBack]BuyGoodsStapleValleyIV",
+            "[JumpBack]BuyGoodsElasticWuling",
+            "[JumpBack]BuyGoodsStapleWuling",
+            "BuyGoodsDone"
+        ]
+    },
+    "BuyGoodsElasticValleyIV": {
+        "desc": "[Config覆盖] 自动囤货弹性需求四号谷地节点",
+        "enabled": false,
+        "max_hit": 1,
+        "pre_delay": 0,
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "SubTask",
+                "custom_action_param": {
+                    "sub": [
+                        "SceneEnterMenuRegionalDevelopmentValleyIVStockRedistribution"
+                    ]
+                }
+            }
+        },
+        "anchor": {
+            "BuyGoodsElasticDecision": "BuyGoodsElasticDecisionValleyIV"
+        },
+        "post_delay": 0,
+        "rate_limit": 0,
+        "next": [
+            "BuyGoodsElasticTask"
+        ],
+        "focus": {
+            "Node.Recognition.Starting": "正在前往: 四号谷地"
+        }
+    },
+    "BuyGoodsStapleValleyIV": {
+        "desc": "自动囤货稳定需求物资四号谷地节点",
+        "enabled": false,
+        "max_hit": 1,
+        "pre_delay": 0,
+        "next": [
+            "BuyGoodsStapleInValleyIV",
+            "[JumpBack]SceneEnterMenuRegionalDevelopmentValleyIVStockRedistribution"
+        ]
+    },
+    "BuyGoodsElasticWuling": {
+        "desc": "[Config覆盖] 自动囤货弹性需求武陵节点",
+        "enabled": false,
+        "max_hit": 1,
+        "pre_delay": 0,
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "SubTask",
+                "custom_action_param": {
+                    "sub": [
+                        "SceneEnterMenuRegionalDevelopmentWulingStockRedistribution"
+                    ]
+                }
+            }
+        },
+        "anchor": {
+            "BuyGoodsElasticDecision": "BuyGoodsElasticDecisionWuling"
+        },
+        "post_delay": 0,
+        "rate_limit": 0,
+        "next": [
+            "BuyGoodsElasticTask"
+        ],
+        "focus": {
+            "Node.Recognition.Starting": "正在前往: 武陵"
+        }
+    },
+    "BuyGoodsStapleWuling": {
+        "desc": "自动囤货稳定需求物资武陵节点",
+        "enabled": false,
+        "max_hit": 1,
+        "pre_delay": 0,
+        "next": [
+            "BuyGoodsStapleInWuling",
+            "[JumpBack]SceneEnterMenuRegionalDevelopmentWulingStockRedistribution"
+        ]
+    },
+    "BuyGoodsDone": {
+        "pre_delay": 0,
+        "post_delay": 0,
+        "rate_limit": 0
+    }
+}

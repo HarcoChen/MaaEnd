@@ -15,7 +15,7 @@ The current implementation is located at:
 - go-service global registration entry: `agent/go-service/register.go`
 - Shared Pipeline: `assets/resource/pipeline/BetterSliding/Main.json` and `Helper.json`
 - Test Pipeline: `assets/resource/pipeline/BetterSliding/Test.json`
-- Existing integration example: `AutoStockpileSwipeSpecificQuantity` in `assets/resource/pipeline/AutoStockpile/Purchase.json`
+- Existing integration example: `BuyGoodsElasticSwipeSpecificQuantity` in `assets/resource/pipeline/BuyGoods/Elastic/Purchase.json`
 
 `agent/go-service/bettersliding/` is now split by responsibility:
 
@@ -116,8 +116,8 @@ In a business Pipeline, call it like a normal `Custom` action. The example below
                     "OnlyRec": false
                 },
                 "Direction": "right",
-                "IncreaseButton": "AutoStockpile/IncreaseButton.png",
-                "DecreaseButton": "AutoStockpile/DecreaseButton.png",
+                "IncreaseButton": "BuyGoods/IncreaseButton.png",
+                "DecreaseButton": "BuyGoods/DecreaseButton.png",
                 "CenterPointOffset": [-10, 0]
             }
         }
@@ -199,7 +199,7 @@ These two fields support two forms:
 #### 1. Pass a template path (recommended)
 
 ```json
-"IncreaseButton": "AutoStockpile/IncreaseButton.png"
+"IncreaseButton": "BuyGoods/IncreaseButton.png"
 ```
 
 In this case, go-service dynamically rewrites the corresponding branch node to `TemplateMatch + Click`:
@@ -326,8 +326,8 @@ When `true`, `BetterSliding` returns success immediately after the precise click
             "custom_action": "BetterSliding",
             "custom_action_param": {
                 "Direction": "right",
-                "IncreaseButton": "AutoStockpile/IncreaseButton.png",
-                "DecreaseButton": "AutoStockpile/DecreaseButton.png",
+                "IncreaseButton": "BuyGoods/IncreaseButton.png",
+                "DecreaseButton": "BuyGoods/DecreaseButton.png",
                 "Quantity": {
                     "Box": [340, 430, 200, 140],
                     "OnlyRec": true
@@ -360,8 +360,8 @@ Here is an example with `FinishAfterPreciseClick` passed through `attach`:
             "custom_action": "BetterSliding",
             "custom_action_param": {
                 "Direction": "right",
-                "IncreaseButton": "AutoStockpile/IncreaseButton.png",
-                "DecreaseButton": "AutoStockpile/DecreaseButton.png",
+                "IncreaseButton": "BuyGoods/IncreaseButton.png",
+                "DecreaseButton": "BuyGoods/DecreaseButton.png",
                 "Quantity": {
                     "Box": [340, 430, 200, 140],
                     "OnlyRec": true
@@ -409,7 +409,7 @@ When `ExceedingOverrideEnable` is **not** set and the target is out of range (in
             "custom_action_param": {
                 "Direction": "right",
                 "ExceedingOverrideEnable": "SomeFallbackNode",
-                "IncreaseButton": "AutoStockpile/IncreaseButton.png",
+                "IncreaseButton": "BuyGoods/IncreaseButton.png",
                 "Target": 1,
                 "Quantity": {
                     "Box": [340, 430, 200, 140],
@@ -425,14 +425,14 @@ When `ExceedingOverrideEnable` is **not** set and the target is out of range (in
     },
     "post_delay": 0,
     "rate_limit": 0,
-    "next": ["AutoStockpileRelayNodeSwipe"],
+    "next": ["BuyGoodsElasticRelayNodeSwipe"],
     "focus": {
         "Node.Action.Failed": "定量滑动失败，取消购买"
     }
 }
 ```
 
-File location: `assets/resource/pipeline/AutoStockpile/Purchase.json` (node: `AutoStockpileSwipeSpecificQuantity`)
+File location: `assets/resource/pipeline/BuyGoods/Elastic/Purchase.json` (node: `BuyGoodsElasticSwipeSpecificQuantity`)
 
 ## Success and failure conditions
 

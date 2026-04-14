@@ -57,7 +57,7 @@ MaaEnd 基于 [MaaFramework](https://github.com/MaaXYZ/MaaFramework)，主体流
 
 | 任务                      | 文档                                                                     |
 | ------------------------- | ------------------------------------------------------------------------ |
-| AutoStockpile 自动囤货    | [tasks/auto-stockpile-maintain.md](./tasks/auto-stockpile-maintain.md)   |
+| BuyGoods 自动囤货    | [tasks/buy-goods-maintain.md](./tasks/buy-goods-maintain.md)   |
 | DijiangRewards 基建任务   | [tasks/dijiang-rewards-maintain.md](./tasks/dijiang-rewards-maintain.md) |
 | CreditShopping 信用点商店 | [tasks/credit-shopping-maintain.md](./tasks/credit-shopping-maintain.md) |
 

@@ -48,8 +48,8 @@ var htmlTemplates = map[string]string{
 	"essencefilter.ext_rule_noop":       "HTML/essencefilter-ext-rule-noop.html",
 	"essencefilter.no_match_discard":    "HTML/essencefilter-no-match-discard.html",
 	"essencefilter.data_version_notice": "HTML/essencefilter-data-version-notice.html",
-	"autostockpile.warning_skip":        "HTML/autostockpile-warning-skip.html",
-	"autostockpile.fatal_error":         "HTML/autostockpile-fatal-error.html",
+	"buygoodselastic.warning_skip":        "HTML/buygoodselastic-warning-skip.html",
+	"buygoodselastic.fatal_error":         "HTML/buygoodselastic-fatal-error.html",
 }
 
 var (

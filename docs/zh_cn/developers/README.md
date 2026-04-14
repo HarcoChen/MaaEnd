@@ -80,7 +80,7 @@ flowchart TD
 
 | 文档                                                             | 说明                                       |
 | ---------------------------------------------------------------- | ------------------------------------------ |
-| [AutoStockpile 自动囤货](./tasks/auto-stockpile-maintain.md)     | 商品模板、商品映射、价格阈值与地区扩展维护 |
+| [BuyGoods 自动囤货](./tasks/buy-goods-maintain.md)     | 商品模板、商品映射、价格阈值与地区扩展维护 |
 | [DijiangRewards 基建任务](./tasks/dijiang-rewards-maintain.md)   | 主流程、阶段职责与 interface 选项覆盖逻辑  |
 | [CreditShopping 信用点商店](./tasks/credit-shopping-maintain.md) | 购买优先级、补信用联动、刷新策略与商品扩展 |
 
