@@ -15,6 +15,12 @@
                 ]
             }
         },
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": 27 // 公告关闭识别命中前，先用 ESC 兜底，避免前台模式下卡在登录公告
+            }
+        },
         "next": [
             "__ScenePrivateLoginContinue",
             "[JumpBack]__ScenePrivateCloseLoginAnnouncement",
